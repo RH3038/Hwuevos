@@ -1,0 +1,37 @@
+.header {
+    font-size: 50px;
+    margin: 40px 0px 30px 20px;
+}
+.content {
+    font-size: 25px;
+    margin: 0px 0px 0px 20px;
+    width: 450px;
+}
+p {
+    font-size: 20px;
+}
+.area-container {
+    width: 707px;
+    margin: 0px 0px 0px 250px;
+    vertical-align: middle;
+}
+.text-area {
+    width: 700px;
+    height:300px;
+    resize: none;
+}
+.button {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #FFC000;
+    border-color: black;
+    border-width: 1px;
+    font-size: 17px;
+    color: #FFFFFF;
+    float: right;
+}
+.button:active {
+    background-color: #FFD966;
+    color: black;
+}

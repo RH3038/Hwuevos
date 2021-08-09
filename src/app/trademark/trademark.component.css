@@ -1,0 +1,14 @@
+.trade-mark {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    top: 97%;
+    width: 100%;
+    font-size: 18px;
+}
+.trade-mark>*:nth-child(1) {
+    order: 1;
+    flex-grow: 1;
+    align-self: center;
+}

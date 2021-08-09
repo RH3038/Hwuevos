@@ -1,0 +1,55 @@
+.search-bar-container {
+    width: 500px;
+    margin: 50px auto auto auto;
+}
+.search-bar {
+    background-image: url('../../assets/images/magnifying-glass.png');
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    width: 500px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-indent: 40px;
+    outline: none;
+}
+.search-bar::placeholder {
+    text-align: center;
+}
+.container {
+    width: 800px;
+    margin: 20px auto auto auto;
+}
+table {
+    table-layout: fixed;
+    margin: auto;
+    width: 95%;
+    text-align: center;
+}
+td, th {
+    width: calc(95% / 5);
+    font-size: 18px;
+}
+.account-container {
+    background-color: black;
+    width: 800px;
+    height: 450px;
+    border-radius: 10px;
+    color: white;
+}
+.button {
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #FFC000;
+    border-color: black;
+    border-width: 1px;
+    font-size: 17px;
+    color: #FFFFFF;
+    align-self: center;
+    margin: 20px 55% auto 45%;
+}
+.button:active {
+    background-color: #FFD966;
+    color: black;
+}

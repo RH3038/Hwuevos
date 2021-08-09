@@ -1,0 +1,48 @@
+.header {
+    font-size: 50px;
+    margin: 40px 0px 30px 20px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    margin-left: 27.5%;
+    margin-right: 72.5%;
+}
+.email-container {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+.password-container {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+.labels {
+    font-size: 18px;
+    margin-right: 10px;
+}
+.inputs {
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.button {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #FFC000;
+    border-color: black;
+    border-width: 1px;
+    font-size: 17px;
+    color: #FFFFFF;
+    align-self: center;
+    margin-left: 177px;
+}
+.button:active {
+    background-color: #FFD966;
+    color: black;
+}
