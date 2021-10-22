@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  rest: any;
+
+  constructor() {;
+  }
 
   messageHead: string = "Keep Track of Your Goals!";
 
@@ -22,8 +26,6 @@ export class HomeComponent implements OnInit {
   
   Managing your money has never been easier, <br>
   sign up and start investing in your future!`;
-
-  constructor() { }
 
   ngOnInit(): void {
 

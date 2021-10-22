@@ -14,3 +14,13 @@ body {
 input {
     background-color: #FFFFFF;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+a:link {
+    color: black;
+}
+a.active-link {
+    color: white;
+}

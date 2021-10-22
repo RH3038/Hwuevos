@@ -10,27 +10,7 @@
     margin-left: 27.5%;
     margin-right: 72.5%;
 }
-.first-name-container {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.last-name-container {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.email-container {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.verify-email-container {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.password-container {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.verify-password-container {
+.input-container {
     align-self: flex-end;
     margin-bottom: 20px;
 }

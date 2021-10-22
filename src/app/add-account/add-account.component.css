@@ -10,11 +10,7 @@
     margin-left: 27.5%;
     margin-right: 72.5%;
 }
-.account-name-container {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.add-amount-container {
+.input-container {
     align-self: flex-end;
     margin-bottom: 20px;
 }

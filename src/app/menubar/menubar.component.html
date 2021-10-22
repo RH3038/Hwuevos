@@ -1,23 +1,24 @@
 <div class="menu-container">
 
     <div class="login-register">
-    <a routerLink="/login">Login</a>  &nbsp; | &nbsp; <a routerLink="/register">Register</a>
-    </div>
-
-    <div id>
-        <img type="image" id="menu-icon" src="../../assets/images/Hwuevos-Logo.png" alt="Hwuevos-Logo">
+    <a routerLink="/login" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Login</a>  
+    &nbsp; | &nbsp; <a routerLink="/register" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Register</a>
     </div>
 
     <div>
-        Hwuevos
+        <img type="image" id="menu-icon" src="../../assets/images/Hwuevos-Logo.png" alt="Hwuevos-Logo">
+    </div>
+
+    <div id="logo-name">
+        Hwuevos 
     </div>
 
     <div>
         <nav>
-            <a routerLink="/home">Home</a> &nbsp; | &nbsp;
-            <a routerLink="/request-service">Request Service</a> &nbsp; | &nbsp;
-            <a routerLink="/mission">Our Mission</a> &nbsp; | &nbsp;
-            <a routerLink="/donate">Donate</a>
+            <a routerLink="/" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Home</a> &nbsp; | &nbsp;
+            <a routerLink="/request-service" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Request Service</a> &nbsp; | &nbsp;
+            <a routerLink="/mission" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Our Mission</a> &nbsp; | &nbsp;
+            <a routerLink="/donate" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Donate</a>
         </nav>
     </div>
 </div>

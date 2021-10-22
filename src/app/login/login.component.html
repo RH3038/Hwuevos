@@ -2,17 +2,22 @@
 
 <div class="header">Login</div>
 
-<div class="container">
+<form [formGroup]="loginForm" class="container" (ngSubmit)="onSubmit()">
+
+    <!--user name-->
     <div class="email-container">
         <label class="labels" for="css">Email:</label>
-        <input class="inputs" type="email" name="emailInput">
+        <input class="inputs" type="email" name="userName" formControlName="userName">
     </div>
+
+    <!--password-->
     <div class="password-container">
         <label class="labels" for="css">Password:</label>
-        <input class="inputs" type="password" name="passwordInput">
+        <input class="inputs" type="password" name="passwordInput" formControlName="password">
     </div>
     <button class="button" type="submit">Submit</button>
-</div>
+
+</form>
 
 <app-trademark></app-trademark>
 

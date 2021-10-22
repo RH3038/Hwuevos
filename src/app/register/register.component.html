@@ -2,39 +2,44 @@
 
 <div class="header">Register</div>
 
-<div class="container">
+<form [formGroup]="regForm" class="container" (ngSubmit)="onSubmit()">
 
-    <div class="first-name-container">
+    <div class="input-container">
         <label class="labels" for="css">First Name:</label>
-        <input class="inputs" type="email" name="firstNameInput">
+        <input class="inputs" type="email" id="firstName" formControlName="firstName">
     </div>
 
-    <div class="last-name-container">
+    <div class="input-container">
         <label class="labels" for="css">Last Name:</label>
-        <input class="inputs" type="email" name="lastNameInput">
+        <input class="inputs" type="email" id="lastName" formControlName="lastName">
     </div>
 
-    <div class="email-container">
+    <div class="input-container">
         <label class="labels" for="css">Email:</label>
-        <input class="inputs" type="email" name="emailInput">
+        <input class="inputs" type="email" id="email" formControlName="email">
     </div>
 
-    <div class="verify-email-container">
+    <div class="input-container">
         <label class="labels" for="css">Verify Email:</label>
-        <input class="inputs" type="email" name="verifyEmailInput">
+        <input class="inputs" type="email" id="email" formControlName="emailVerify">
     </div>
 
-    <div class="password-container">
+    <div class="input-container">
         <label class="labels" for="css">Password:</label>
-        <input class="inputs" type="password" name="passwordInput">
+        <input class="inputs" type="password" id="password" formControlName="password">
     </div>
 
-    <div class="verify-password-container">
+    <div class="input-container">
         <label class="labels" for="css">Verify Password:</label>
-        <input class="inputs" type="password" name="verifyPasswordInput">
+        <input class="inputs" type="password" formControlName="passwordVerify">
+    </div>
+
+    <div class="input-container">
+        <label class="labels" for="css">Add Amount:</label>
+        <input class="inputs" type="number" formControlName="addAmount">
     </div>
 
     <button class="button" type="submit">Submit</button>
-</div>
+</form>
 
 <app-trademark></app-trademark>

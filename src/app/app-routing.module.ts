@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, 
+         Routes } from '@angular/router';
 import { HomeComponent,
          LoginComponent,
          MissionComponent,
@@ -8,6 +9,9 @@ import { HomeComponent,
          RegisterComponent,
          AccountsPageComponent,
          AddAccountComponent,
+         AccountSummaryComponent,
+         StockSummaryComponent,
+         StockPageComponent,
          AddStockComponent,
          SettingsComponent } from 'src/index';
 
@@ -22,7 +26,11 @@ const routes: Routes = [
   {path: 'add-account', component: AddAccountComponent, data: {title: 'Add Account'}},
   {path: 'add-stock', component: AddStockComponent, data: {title: 'Add Stock'}},
   {path: 'accounts-page', component: AccountsPageComponent, data: {title: 'Accounts Page'}},
+  {path: 'stock-page/:id', component: StockPageComponent, data: {title: 'Stock Page'}},
+  {path: 'account-summary', component: AccountSummaryComponent, data: {title: 'Account Summary'}},
+  {path: 'stock-summary/:id', component: StockSummaryComponent, data: {title: 'Account Summary'}},
   {path: 'settings', component: SettingsComponent, data: {title: 'Settings'}},
+
 
   //redirect to landing page
   {path: '**', redirectTo: ''}

@@ -3,16 +3,20 @@
 
 <div class="header">Add Account</div>
 
-<div class="container">
-    <div class="account-name-container">
+<form [formGroup]="addForm" class="container" (ngSubmit)="onSubmit()">
+
+    <div class="input-container">
         <label class="labels" for="css">Account Name:</label>
-        <input class="inputs" type="text" name="accountNameInput">
+        <input class="inputs" type="text" formControlName="name">
     </div>
-    <div class="add-amount-container">
+
+    <div class="input-container">
         <label class="labels" for="css">Add Amount:</label>
-        <input class="inputs" type="number" name="addAmountInput">
+        <input class="inputs" type="number" formControlName="amount">
     </div>
+
     <button class="button" type="submit">Submit</button>
-</div>
+
+</form>
 
 <app-trademark></app-trademark>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrademarkComponent implements OnInit {
 
-  trademark: string = "@Trademark: Hwuevos ltd. | hwuevos@hmail.com| (999) 847-2847"
+  trademark: string = "@Trademark: Hwuevos ltd. | hwuevos@hmail.com | (999) 847-2847"
   
   constructor() { }
 

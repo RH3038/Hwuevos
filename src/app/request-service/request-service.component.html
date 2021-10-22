@@ -1,11 +1,16 @@
 <app-menubar></app-menubar>
 
 <div class="header" [innerHTML]="messageHead"></div>
+
 <div class="content" [innerHTML]="message"></div>
-<div class="area-container">
+
+<form [formGroup]="requestForm" class="area-container" (ngSubmit)="onSubmit()">
     <p>Drop your idea here:</p>
-    <textarea class="text-area"></textarea>
+
+    <!--service request-->
+    <textarea class="text-area" formControlName="request"></textarea>
     <button class="button" type="submit">Submit</button>
-</div>
+
+</form>
 
 <app-trademark></app-trademark>

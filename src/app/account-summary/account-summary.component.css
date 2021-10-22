@@ -1,0 +1,40 @@
+.container {
+    display: block;
+    width: 800px;
+    margin: 50px auto auto auto;
+    
+}
+.account-container {
+    background-color: black;
+    width: 700px;
+    height: 550px;
+    color: white;
+    margin: auto;
+    border-radius: 10px;
+}
+.header {
+    width: 100%;
+    text-align: center;
+    padding-top: 1px;
+}
+.info-container {
+    width: 100%;
+    padding: 0px;
+}
+.info-left {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 20px;
+}
+.info-right {
+    display: inline-block;
+    width: 46%;
+    text-align: left;
+    font-size: 20px;
+}
+p {
+    margin: 12px;
+}

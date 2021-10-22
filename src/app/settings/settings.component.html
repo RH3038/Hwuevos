@@ -1,1 +1,40 @@
-<p>settings works!</p>
+<app-menubar-user></app-menubar-user>
+
+<div class="header">Settings</div>
+
+<form [formGroup]="settingsForm" class="container" (ngSubmit)="onSubmit()">
+
+    <div class="input-container">
+        <label class="labels" for="css">Reset Email:</label>
+        <input class="inputs" type="email" id="resetEmail" formControlName="resetEmail">
+    </div>
+
+    <div class="input-container">
+        <label class="labels" for="css">Verify Email:</label>
+        <input class="inputs" type="email" id="verifyEmail" formControlName="verifyEmail">
+    </div>
+
+    <div class="input-container">
+        <label class="labels" for="css">Reset Password:</label>
+        <input class="inputs" type="email" id="resetPassword" formControlName="resetPassword">
+    </div>
+
+    <div class="input-container">
+        <label class="labels" for="css">Verify Password:</label>
+        <input class="inputs" type="email" id="verifyPassword" formControlName="verifyPassword">
+    </div>
+
+    <div class="input-container">
+        <label class="labels" for="css">Add-Sub Amount:</label>
+        <input class="inputs" type="password" id="addSub" formControlName="addSub">
+    </div>
+
+    <div class="input-container">
+        <label class="labels" for="css">Delete Account:</label>
+        <input class="inputs" type="delAccount" formControlName="delAccount">
+    </div>
+
+    <button class="button" type="submit">Submit</button>
+</form>
+
+<app-trademark></app-trademark>

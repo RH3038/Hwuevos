@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-request-service',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-service.component.css']
 })
 export class RequestServiceComponent implements OnInit {
+
+  requestForm!: FormGroup;
 
   messageHead: string = "Do you have a good idea?";
 
@@ -17,6 +20,14 @@ export class RequestServiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.requestForm = new FormGroup({
+    request: new FormControl('', Validators.required)
+    });
+  }
+
+  onSubmit() {
+    console.log(this.requestForm.value);
+    this.requestForm.reset();
   }
 
 }

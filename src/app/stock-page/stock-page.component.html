@@ -1,0 +1,33 @@
+<app-menubar-user></app-menubar-user>
+
+<div class="search-bar-container">
+    <input class="search-bar" type="text" placeholder="Search">
+</div>
+
+<div class="container">
+    <!-- Table that displays account-container headings-->
+    <table>
+        <tr class="table-head">
+            <th>Account</th>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Avg Price</th>
+            <th>Total</th>
+        </tr>
+    </table>
+    <div class="account-container">
+        <!-- Table that displays account-container data-->
+        <table>
+            <tr class="row" (click)="navigate(stock)" *ngFor="let stock of stocks">
+                <td class="data">{{stock.account}}</td>
+                <td class="data">{{stock.stock}}</td>
+                <td class="data">{{stock.shares}}</td>
+                <td class="data">${{stock.average}}</td>
+                <td class="data">{{stock.total}}</td>
+            </tr>
+        </table>
+    </div>
+    <button class="button" type="submit" routerLink="/add-stock">Add Stock</button>
+</div>
+
+<app-trademark></app-trademark>

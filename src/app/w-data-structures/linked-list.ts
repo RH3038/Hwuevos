@@ -1,10 +1,3 @@
-/*
-Object: Node;
-Type: Generic;
-Vars: id(number), data(T), next(ObjNode<T>), 
-      prev(ObjNode<T>);
-Description: Creates a node object for linked-list.
-*/
 export class ObjNode<T> {
 	private id: number;
 	private data: T;
@@ -267,18 +260,18 @@ export class LinkedList<T> {
             	console.log("cannot remove: slot is too small!");
             	console.log("list size: " + this.len);
         	}
+            //if: slot = len then remove last node.
+			else if(slot == this.len) {
+				this.remove();
+			}
 			//if: slot = 1 remove 1st node, set head.
 			else if(slot == 1) {
 				returnNode = this.head;
-				
+
 				curNode = this.head;
 				this.head = curNode.next;
 				curNode.next.prev = null;
 				curNode.next = null;
-			}
-			//if: slot = len then remove last node.
-			else if(slot == this.len) {
-				this.remove();
 			}
 			else {
 				curNode = this.head;
@@ -384,10 +377,3 @@ export class LinkedList<T> {
 		}
 	}
 }
-
-let list = new LinkedList<number>();
-list.append(100);
-list.append(105);
-list.append(100);
-list.remove(1);
-list.printAll();
