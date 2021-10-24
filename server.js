@@ -1,4 +1,4 @@
-import express from 'express';
+express = require('express');
 
 var app = express();
 
@@ -14,28 +14,14 @@ app.get('/', function (req, res) {
       database: 'Hwuevos',
       synchronize: true,
       trustServerCertificate: true,
-  };
+    };
 
-    // connect to your database
-    sql.connect(config, function (err) {
-    
-        if (err) console.log(err);
+    var connect = new sql.ConnectionPool();
 
-        // create Request object
-        var request = new sql.Request();
-           
-        // query to the database and get the records
-        request.query('select * from dbo.Account', function (err, recordset) {
-            
-            if (err) console.log(err)
-
-            // send records as a response
-            res.send(recordset);
-            
-        });
-    });
+  
 });
 
-var server = app.listen(5000, function () {
-    console.log('Server is running..');
+var server = app.listen(process.env.PORT || 5000, function () {
+  var port = server.address().port;
+  console.log('Server is running on port: ' + port);
 });
