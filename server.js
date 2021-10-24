@@ -1,22 +1,17 @@
 express = require('express');
-
 var app = express();
 
-app.get('/', function (req, res) {
-   
-    var sql = require("mssql");
+// config for your database
+const config = {
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  server: process.env.SERVER, 
+  database: process.env.DATABASE,
+  synchronize: true,
+  trustServerCertificate: true,
+};
 
-    // config for your database
-    const config = {
-      user: 'RH3038',
-      password: 'Rh653038@$',
-      server: 'MrHam92', 
-      database: 'Hwuevos',
-      synchronize: true,
-      trustServerCertificate: true,
-    };
-
-    var connect = new sql.ConnectionPool();
+app.put('/accounts-page', function (req, res) {
 
   
 });

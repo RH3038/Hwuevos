@@ -46,3 +46,6 @@ Thumbs.db
 
 # Environment Files
 .env
+
+# Config Files
+.config
