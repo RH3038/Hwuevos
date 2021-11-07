@@ -3,7 +3,7 @@
 
 <div class="header">Add Account</div>
 
-<form [formGroup]="addForm" class="container" (ngSubmit)="onSubmit()">
+<form [formGroup]="addForm" class="container" (ngSubmit)="onSubmit()" >
 
     <div class="input-container">
         <label class="labels" for="css">Account Name:</label>
@@ -15,7 +15,7 @@
         <input class="inputs" type="number" formControlName="amount">
     </div>
 
-    <button class="button" type="submit">Submit</button>
+    <button class="button">Submit</button>
 
 </form>
 

@@ -6,4 +6,4 @@ export interface IStock {
     "date"?: Date,
     "average"?: number,
     "total"?: number
-  }
+}

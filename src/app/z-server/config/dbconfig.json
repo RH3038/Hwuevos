@@ -1,0 +1,8 @@
+{
+    "user" : "RH3038",
+    "password" : "Rh653038@$",
+    "server" : "localhost", 
+    "database" : "Hwuevos",
+    "synchronize" : true,
+    "trustServerCertificate" : true
+}

@@ -11,7 +11,8 @@ import { AppRoutingModule, AppComponent, HomeComponent,
          RequestServiceComponent, DonateComponent, AddStockComponent,
          SettingsComponent, AddAccountComponent, AccountsPageComponent,
          AccountSummaryComponent, StockSummaryComponent, AddAccountService, 
-         AddStockService, PortService, StockPageComponent } from 'src/index';   
+         AddStockService, PortService, StockPageComponent,
+         ConfigService, AddUserService } from 'src/index';   
 
 //Angular Modules: components, please make sure component routes are set in index.ts
 @NgModule({
@@ -24,15 +25,15 @@ import { AppRoutingModule, AppComponent, HomeComponent,
     StockSummaryComponent, StockPageComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule,
-    FormsModule, ReactiveFormsModule
+    BrowserModule, HttpClientModule, AppRoutingModule, 
+    HttpClientModule, FormsModule, ReactiveFormsModule
   ],
   exports: [
     LoginComponent, RegisterComponent
   ],
   providers: [
     [BrowserModule], [HttpClientModule], [AddAccountService],
-    [AddStockService], [PortService]
+    [AddStockService], [AddUserService], [PortService], [ConfigService]
   ],
   bootstrap: [
     AppComponent

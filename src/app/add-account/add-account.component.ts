@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IAccount, AddAccountService} from 'src/index';
+import { IAccount, AddAccountService } from 'src/index';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-account',
@@ -21,18 +22,21 @@ export class AddAccountComponent implements OnInit {
     });
 
   }
+
+  ngOnClose() {
+    this.onSubmit()
+  }
       
   onSubmit() {
     
     var acct: IAccount = {};
-
     acct.name = this.addForm.controls.name.value;
     acct.funds = +this.addForm.controls.amount.value;
     acct.percent = 0;
     acct.dollar = 0;
     acct.total = 0;
-
     this._object.setAccount(acct);
+    this._object.addAccount(acct).subscribe()
     this.router.navigate(['/accounts-page']);
   }
 

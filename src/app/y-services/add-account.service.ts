@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { IAccount } from 'src/index';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AddAccountService {
-    account!: IAccount | null;
+    private account!: IAccount | null;
+    private _url = 'http://localhost:5000/add-account';
     
-    constructor() {
+    constructor(private _http: HttpClient) {
         this.account = null;
     }
 
@@ -18,13 +22,20 @@ export class AddAccountService {
     public setAccount(acct: IAccount | null): void {
 
         if(acct?.name != '') {
-            console.log("Service" + acct);
+
             this.account = acct;
+            
         }
         else {
             this.account = null;
             window.alert("Oops: you didn't enter an account name!");
         }
+
+    }
+
+    public addAccount(data: any): Observable<any> {
+
+        return this._http.post<any>(this._url, data);
 
     }
 

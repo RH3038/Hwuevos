@@ -20,13 +20,13 @@ export class StockPageComponent implements OnInit {
     let ref = window.location.href.split("/").pop()?.toLowerCase();
     let sessionGet = JSON.parse(sessionStorage.getItem("Stocks" + "/" + ref) as string);
     let sessionSet: any;
-    this.stock = this._object.getAccount();
+    this.stock = this._object.getStock();
 
     if(sessionGet == null && this.stock != null) {
       this.stocks.push(this.stock);
       sessionSet = JSON.stringify(this.stocks);
       sessionStorage.setItem("Stocks" + "/" + ref, sessionSet);
-      this._object.setAccount(null);
+      this._object.setStock(null);
     }
     else if(sessionGet != null && this.stock == null) {
       this.stocks = sessionGet;
@@ -36,12 +36,11 @@ export class StockPageComponent implements OnInit {
       this.stocks.push(this.stock);
       sessionSet = JSON.stringify(this.stocks);
       sessionStorage.setItem("Stocks" + "/" + ref, sessionSet);
-      this._object.setAccount(null);
+      this._object.setStock(null);
     }
     else { }
 
     this.port.setItem(window.location.pathname.split('/').pop());
-
   }
 
   navigate(stock: IStock) {

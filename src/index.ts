@@ -32,22 +32,18 @@ export * from './app/trademark/trademark.component';
 export * from './app/w-data-structures/linked-list';
 
 //z-object classes in alphabeltical order.
-`export * from './app/x-objects/account';
-export * from './app/x-objects/add-stock';
-export * from './app/x-objects/buy-shares';
-export * from './app/x-objects/login';
-export * from './app/x-objects/register';
-export * from './app/x-objects/sell-shares';
-export * from './app/x-objects/settings';
-export * from './app/x-objects/stock';
-export * from './app/x-objects/user'; `
+export * from './app/x-objects/IAuth';
 export * from './app/x-objects/IAccount';
-export * from './app/x-objects/IStock'
+export * from './app/x-objects/IStock';
+export * from './app/x-objects/IUser';
 
 //services in alphabeltical order.
-export * from './app/z-services/add-account.service';
-export * from './app/z-services/add-stock.service';
-export * from './app/z-services/port.service';
+export * from './app/y-services/add-account.service';
+export * from './app/y-services/add-stock.service';
+export * from './app/y-services/add-user.service';
+export * from './app/y-services/add-auth.service';
+export * from './app/y-services/config.service';
+export * from './app/y-services/port.service';
 
 //app-routing module: always keep at the bottom of index.ts
 export * from './app/app-routing.module';

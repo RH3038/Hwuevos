@@ -20,6 +20,8 @@
     "@ngrx/store": "^12.4.0",
     "@polygon.io/client-js": "^3.0.0",
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mssql": "^7.2.1",
     "mysql": "^2.18.1",
