@@ -24,6 +24,7 @@ router.post('/add-account', (req, res) => {
         request.query(`INSERT INTO dbo.Account(Account_Name, Funds_Available) 
             VALUES('${req.body.name}', '${req.body.funds}')`, function (err, result) {});
 
+            
     });
 
 });
@@ -37,7 +38,7 @@ router.get('/add-account/data', (req, res) => {
         // create request object
         var request = new sql.Request();
 
-        // add-account page insert account into database
+        // get account information
         request.query(`SELECT * FROM dbo.Account`, function (err, recordset) {
 
             if (err) console.log(err);

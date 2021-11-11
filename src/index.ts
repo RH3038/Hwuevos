@@ -32,8 +32,8 @@ export * from './app/trademark/trademark.component';
 export * from './app/w-data-structures/linked-list';
 
 //z-object classes in alphabeltical order.
-export * from './app/x-objects/IAuth';
 export * from './app/x-objects/IAccount';
+export * from './app/x-objects/ILogin';
 export * from './app/x-objects/IStock';
 export * from './app/x-objects/IUser';
 
@@ -41,7 +41,6 @@ export * from './app/x-objects/IUser';
 export * from './app/y-services/add-account.service';
 export * from './app/y-services/add-stock.service';
 export * from './app/y-services/add-user.service';
-export * from './app/y-services/add-auth.service';
 export * from './app/y-services/config.service';
 export * from './app/y-services/port.service';
 
