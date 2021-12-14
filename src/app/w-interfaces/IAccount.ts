@@ -1,7 +1,8 @@
 export interface IAccount {
-    "name"?: string,
+    "user"?: string,
+    "account"?: string,
     "funds"?: number,
     "percent"?: number,
     "dollar"?: number,
-    "total"?: number
+    "total"?: number,
   }

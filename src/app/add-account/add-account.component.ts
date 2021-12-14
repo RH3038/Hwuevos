@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IAccount, AddAccountService } from 'src/index';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IAccount, AccountService, StorageService } from 'src/index';
 
 @Component({
   selector: 'app-add-account',
@@ -11,8 +11,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddAccountComponent implements OnInit {
   addForm!: FormGroup;
+  user!: string;
 
-  constructor(private router: Router, private _object: AddAccountService) { }
+  constructor(private _router: Router, private _account: AccountService,
+    private _storage: StorageService) { 
+
+      this.user = _storage.sessionGet("Login");
+
+    }
 
   ngOnInit(): void {
 
@@ -23,21 +29,42 @@ export class AddAccountComponent implements OnInit {
 
   }
 
-  ngOnClose() {
-    this.onSubmit()
-  }
-      
   onSubmit() {
-    
+
+    let result = this.session()
+    result.subscribe((data: any) => {
+      
+      if(data == true) {
+
+        this._router.navigate(['/accounts-page', this.user.toLowerCase()]);
+
+      }
+      else {
+ 
+      }
+      
+    });
+
+  }
+
+  account(): IAccount {
     var acct: IAccount = {};
-    acct.name = this.addForm.controls.name.value;
+
+    acct.user = JSON.parse(sessionStorage.getItem("Login") as string);
+    acct.account = this.addForm.controls.name.value;
     acct.funds = +this.addForm.controls.amount.value;
     acct.percent = 0;
     acct.dollar = 0;
-    acct.total = 0;
-    this._object.setAccount(acct);
-    this._object.addAccount(acct).subscribe()
-    this.router.navigate(['/accounts-page']);
+    acct.total = +this.addForm.controls.amount.value;
+
+    return acct;
+
+  }
+
+  session(): any {
+
+    return this._account.setData(this.account());
+
   }
 
 }

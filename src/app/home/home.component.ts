@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService} from 'src/index'
 
 @Component({
   selector: 'home',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  rest: any;
+  loggedIn!: boolean;
 
-  constructor() {;
-  }
+  constructor(private _store: StorageService) {}
 
   messageHead: string = "Keep Track of Your Goals!";
 
@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit {
   sign up and start investing in your future!`;
 
   ngOnInit(): void {
+    
+    this.loggedIn = this._store.sessionGet("LoggedIn");
 
   }
 

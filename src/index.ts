@@ -7,7 +7,6 @@ with src index; ex. import {} from 'src/index';
 
 //main application components.
 export * from './app/app.component';
-export * from './app/home/home.component';
 
 //front end components in alphabeltical order.
 export * from './app/accounts-page/accounts-page.component';
@@ -28,21 +27,27 @@ export * from './app/stock-page/stock-page.component';
 export * from './app/stock-summary/stock-summary.component';
 export * from './app/trademark/trademark.component';
 
-//z-data-structure classes in alphabeltical order.
-export * from './app/w-data-structures/linked-list';
+//w-interfaces in alphabeltical order.
+export * from './app/w-interfaces/IAccount';
+export * from './app/w-interfaces/ILogin';
+export * from './app/w-interfaces/IStock';
+export * from './app/w-interfaces/IUser';
+export * from './app/w-interfaces/ISummary';
 
-//z-object classes in alphabeltical order.
-export * from './app/x-objects/IAccount';
-export * from './app/x-objects/ILogin';
-export * from './app/x-objects/IStock';
-export * from './app/x-objects/IUser';
+//x-services in alphabeltical order.
+export * from './app/x-services/account.service';
+export * from './app/x-services/stock.service';
+export * from './app/x-services/user.service';
+export * from './app/x-services/config.service';
+export * from './app/x-services/port.service';
+export * from './app/x-services/storage.servcie';
+export * from './app/x-services/login.service';
+export * from './app/x-services/summary.service';
 
-//services in alphabeltical order.
-export * from './app/y-services/add-account.service';
-export * from './app/y-services/add-stock.service';
-export * from './app/y-services/add-user.service';
-export * from './app/y-services/config.service';
-export * from './app/y-services/port.service';
+//z-resolvers in alphabetical order.
+export * from './app/z-resolvers/account.resolve';
+export * from './app/z-resolvers/stock.resolve';
+export * from './app/z-resolvers/summary.resolve';
 
 //app-routing module: always keep at the bottom of index.ts
 export * from './app/app-routing.module';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IStock, PortService, AddStockService } from 'src/index';
-import { Router } from '@angular/router';
+import { IStock, PortService, StockService, StorageService } from 'src/index';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-stock-page',
@@ -8,43 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./stock-page.component.css']
 })
 export class StockPageComponent implements OnInit {
-  stocks!: Array<IStock>;
-  stock!: IStock | null;
 
-  constructor(private router: Router, private _object: AddStockService, private port: PortService) {
-    this.stocks = [];
-    this.stock = null;
-   }
+  public stocks!: Array<IStock>;
+  private stock!: IStock;
+
+  constructor(private router: Router, private _object: StockService, 
+    private _active: ActivatedRoute, private _storage: StorageService) {
+
+      this._active.data.subscribe(data => { this.stocks = data.stocks });
+
+  }
 
   ngOnInit(): void {
-    let ref = window.location.href.split("/").pop()?.toLowerCase();
-    let sessionGet = JSON.parse(sessionStorage.getItem("Stocks" + "/" + ref) as string);
-    let sessionSet: any;
-    this.stock = this._object.getStock();
 
-    if(sessionGet == null && this.stock != null) {
-      this.stocks.push(this.stock);
-      sessionSet = JSON.stringify(this.stocks);
-      sessionStorage.setItem("Stocks" + "/" + ref, sessionSet);
-      this._object.setStock(null);
-    }
-    else if(sessionGet != null && this.stock == null) {
-      this.stocks = sessionGet;
-    }
-    else if (sessionGet != null && this.stock != null){
-      this.stocks = sessionGet;
-      this.stocks.push(this.stock);
-      sessionSet = JSON.stringify(this.stocks);
-      sessionStorage.setItem("Stocks" + "/" + ref, sessionSet);
-      this._object.setStock(null);
-    }
-    else { }
+    this._storage.sessionSet("Account", this.router.url.split('/')[2]);
 
-    this.port.setItem(window.location.pathname.split('/').pop());
   }
 
   navigate(stock: IStock) {
-    
+
     this.router.navigate(['/stock-summary', (stock.stock)?.toLowerCase()]);
 
   }

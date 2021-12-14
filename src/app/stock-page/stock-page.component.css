@@ -1,6 +1,6 @@
 .search-bar-container {
     width: 500px;
-    margin: 50px auto auto auto;
+    margin: 35px auto 30px auto;
 }
 .search-bar {
     background-image: url('../../assets/images/magnifying-glass.png');
@@ -14,7 +14,9 @@
     outline: none;
 }
 .search-bar::placeholder {
-    text-align: center;
+    position: absolute;
+    left: 173px;
+    top: 6px;
 }
 .container {
     width: 800px;

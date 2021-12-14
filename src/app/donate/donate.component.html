@@ -1,4 +1,12 @@
-<app-menubar></app-menubar>
+<div *ngIf="loggedIn; then menutwo; else menu"></div>
+
+<ng-template #menutwo>
+    <app-menubar-two></app-menubar-two>
+</ng-template>
+
+<ng-template #menu>
+    <app-menubar></app-menubar>
+</ng-template>
 
 <div class="header" [innerHTML]="messageHead"></div>
 <div class="content" [innerHTML]="message"></div>

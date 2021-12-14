@@ -1,19 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, 
          Routes } from '@angular/router';
-import { HomeComponent,
-         LoginComponent,
-         MissionComponent,
-         DonateComponent,
-         RequestServiceComponent,
-         RegisterComponent,
-         AccountsPageComponent,
-         AddAccountComponent,
-         AccountSummaryComponent,
-         StockSummaryComponent,
-         StockPageComponent,
-         AddStockComponent,
-         SettingsComponent } from 'src/index';
+import { HomeComponent, LoginComponent, MissionComponent,
+         DonateComponent, RequestServiceComponent, RegisterComponent,
+         AccountsPageComponent, AddAccountComponent, AccountSummaryComponent,
+         StockSummaryComponent, StockPageComponent, AddStockComponent,
+         SettingsComponent, AccountResolver, StockResolver,
+         SummaryResolver} from 'src/index';
 
 
 const routes: Routes = [
@@ -25,10 +18,10 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   {path: 'add-account', component: AddAccountComponent, data: {title: 'Add Account'}},
   {path: 'add-stock', component: AddStockComponent, data: {title: 'Add Stock'}},
-  {path: 'accounts-page', component: AccountsPageComponent, data: {title: 'Accounts Page'}},
-  {path: 'stock-page/:id', component: StockPageComponent, data: {title: 'Stock Page'}},
+  {path: 'accounts-page/:id', component: AccountsPageComponent, resolve: {accounts: AccountResolver}, data: {title: 'Accounts Page'}},
+  {path: 'stock-page/:id', component: StockPageComponent, resolve: {stocks: StockResolver}, data: {title: 'Stock Page'}},
   {path: 'account-summary', component: AccountSummaryComponent, data: {title: 'Account Summary'}},
-  {path: 'stock-summary/:id', component: StockSummaryComponent, data: {title: 'Account Summary'}},
+  {path: 'stock-summary/:id', component: StockSummaryComponent, resolve: {summary: SummaryResolver}, data: {title: 'Account Summary'}},
   {path: 'settings', component: SettingsComponent, data: {title: 'Settings'}},
 
 

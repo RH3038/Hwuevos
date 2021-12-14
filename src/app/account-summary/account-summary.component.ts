@@ -29,7 +29,6 @@ export class AccountSummaryComponent implements OnInit {
     this.email = "";
    }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

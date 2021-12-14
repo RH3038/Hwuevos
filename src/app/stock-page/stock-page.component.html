@@ -8,9 +8,9 @@
     <!-- Table that displays account-container headings-->
     <table>
         <tr class="table-head">
-            <th>Account</th>
             <th>Stock</th>
             <th>Shares</th>
+            <th>Purchase Price</th>
             <th>Avg Price</th>
             <th>Total</th>
         </tr>
@@ -19,11 +19,11 @@
         <!-- Table that displays account-container data-->
         <table>
             <tr class="row" (click)="navigate(stock)" *ngFor="let stock of stocks">
-                <td class="data">{{stock.account}}</td>
                 <td class="data">{{stock.stock}}</td>
                 <td class="data">{{stock.shares}}</td>
+                <td class="data">${{stock.price}}</td>
                 <td class="data">${{stock.average}}</td>
-                <td class="data">{{stock.total}}</td>
+                <td class="data">${{stock.total}}</td>
             </tr>
         </table>
     </div>

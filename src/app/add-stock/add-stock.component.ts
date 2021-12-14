@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IStock, AddStockService, PortService } from 'src/index';
+import { IStock, StockService, PortService,
+         StorageService } from 'src/index';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,12 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-stock.component.css']
 })
 export class AddStockComponent implements OnInit {
-  addForm!: FormGroup;
-  acctName!: any;
 
-  constructor(private router: Router, private _object: AddStockService, private port: PortService) {}
+  public addForm!: FormGroup;
+  private account!: string;
+  private user!: string;
+
+  constructor(private router: Router, private _stock: StockService, 
+    private port: PortService, public _storage: StorageService) {
+
+    }
 
   ngOnInit(): void {
+    this.account = this._storage.sessionGet("account");
+    this.user = this._storage.sessionGet("Login");
 
     this.addForm = new FormGroup({
       stock: new FormControl('', Validators.required),
@@ -25,29 +33,46 @@ export class AddStockComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.session();
+
+  }
+
+  stock(): IStock {
+
     var stock: IStock = {};
-    let account: any = this.port.getItem();
 
-    stock.account = account[0].toUpperCase() 
-      + account.slice(1).toLowerCase();
+    stock.user = this.user;
+    stock.account = this._storage.sessionGet("account");
     stock.stock = this.addForm.controls.stock.value;
-    stock.shares = +this.addForm.controls.shares.value;
-    stock.price = +this.addForm.controls.price.value;
+    stock.shares = this.addForm.controls.shares.value;
+    stock.price = this.addForm.controls.price.value;
+    stock.cost = this.addForm.controls.price.value;
     stock.date = new Date();
-    stock.average = +this.addForm.controls.price.value;
-    stock.total = +(this.addForm.controls.price.value * 
-      this.addForm.controls.shares.value).toFixed(2);
+    stock.average = this.addForm.controls.price.value;
+    stock.total = this.addForm.controls.shares.value * 
+                  this.addForm.controls.price.value;
 
-    this._object.setStock(stock);
+    return stock;
 
-    this._object.addStock({
-      'account': stock?.account, 'stock': stock?.stock,
-      'shares': stock?.shares, 'price': stock?.price,
-      'date': stock?.date, 'average': stock?.average,
-      'total': stock?.total
-    }).subscribe();
+  }
 
-    this.router.navigate([window.history.back()]);
+  session() {
+
+    this._stock.setData(this.stock())
+    .subscribe((data: any) => {
+
+      if(data == true) {
+
+        this.router.navigate(['/stock-page', this.account]);
+
+      }
+      else {
+
+      }
+
+    });
+
   }
 
 }

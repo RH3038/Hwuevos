@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService} from 'src/index';
 
 @Component({
   selector: 'app-mission',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mission.component.css']
 })
 export class MissionComponent implements OnInit {
-
+  loggedIn!: boolean;
   messageHead: string = "Here's our mission!";
 
   message: string = 
@@ -28,9 +29,12 @@ export class MissionComponent implements OnInit {
   to do it for themselves and give them the tools to do it!
   `;
 
-  constructor() { }
+  constructor(private _store: StorageService) { }
 
   ngOnInit(): void {
+
+    this.loggedIn = this._store.sessionGet("LoggedIn");
+
   }
 
 }

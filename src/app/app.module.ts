@@ -10,9 +10,11 @@ import { AppRoutingModule, AppComponent, HomeComponent,
          MenubarUserComponent, MissionComponent, TrademarkComponent,
          RequestServiceComponent, DonateComponent, AddStockComponent,
          SettingsComponent, AddAccountComponent, AccountsPageComponent,
-         AccountSummaryComponent, StockSummaryComponent, AddAccountService, 
-         AddStockService, PortService, StockPageComponent,
-         ConfigService, AddUserService } from 'src/index';   
+         AccountSummaryComponent, StockSummaryComponent, AccountService, 
+         StockService, PortService, StockPageComponent,  
+         ConfigService, AddUserService, StorageService,
+         LoginService } from 'src/index';
+import { MenubarTwoComponent } from './menubar-two/menubar-two.component';   
 
 //Angular Modules: components, please make sure component routes are set in index.ts
 @NgModule({
@@ -22,7 +24,7 @@ import { AppRoutingModule, AppComponent, HomeComponent,
     MissionComponent, DonateComponent, RequestServiceComponent,
     RegisterComponent, AddStockComponent, SettingsComponent,
     AddAccountComponent, AccountsPageComponent, AccountSummaryComponent,
-    StockSummaryComponent, StockPageComponent
+    StockSummaryComponent, StockPageComponent, MenubarTwoComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, 
@@ -32,8 +34,10 @@ import { AppRoutingModule, AppComponent, HomeComponent,
     LoginComponent, RegisterComponent
   ],
   providers: [
-    [BrowserModule], [HttpClientModule], [AddAccountService],
-    [AddStockService], [AddUserService], [PortService], [ConfigService]
+    [BrowserModule], [HttpClientModule], [AccountService],
+    [StockService], [AddUserService], [PortService], 
+    [ConfigService], [StorageService], [StockService],
+    [LoginService]
   ],
   bootstrap: [
     AppComponent

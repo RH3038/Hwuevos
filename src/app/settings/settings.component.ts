@@ -32,6 +32,7 @@ export class SettingsComponent implements OnInit {
       verifyEmail: new FormControl('', Validators.required),
       resetPassword: new FormControl('', Validators.required),
       verifyPassword: new FormControl('', Validators.required),
+      addSub: new FormControl('', Validators.required),
       delAccount: new FormControl('', Validators.required),
     });
 

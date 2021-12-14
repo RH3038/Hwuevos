@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../x-services/storage.servcie';
+import { StorageService } from 'src/index'
 
 @Component({
-  selector: 'app-menubar-user',
-  templateUrl: './menubar-user.component.html',
-  styleUrls: ['./menubar-user.component.css']
+  selector: 'app-menubar-two',
+  templateUrl: './menubar-two.component.html',
+  styleUrls: ['./menubar-two.component.css']
 })
-export class MenubarUserComponent implements OnInit {
+export class MenubarTwoComponent implements OnInit {
 
   user!: string;
   account!: string;

@@ -15,19 +15,22 @@
             <th>Total</th>
         </tr>
     </table>
+
     <div class="account-container">
         <!-- Table that displays account-container data-->
         <table id="account-table">
             <tr class="row" (click)="navigate(account)" *ngFor="let account of accounts">
-                <td class="data">{{account.name}}</td>
-                <td class="data">{{account.funds}}</td>
+                <td class="data">{{account.account}}</td>
+                <td class="data">${{account.funds}}</td>
                 <td class="data">{{account.percent}}%</td>
                 <td class="data">${{account.dollar}}</td>
-                <td class="data">{{account.total}}</td>
+                <td class="data">${{account.total}}</td>
             </tr>
         </table>
     </div>
+
     <button class="button" type="submit" routerLink="/add-account">Add Account</button>
+    
 </div>
 
 <app-trademark></app-trademark>

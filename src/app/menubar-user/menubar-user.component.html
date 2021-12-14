@@ -1,8 +1,8 @@
 <div class="menu-container">
 
     <!--1st child: flex-->
-    <div class="login">
-    <a routerLink="" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Logout</a>
+    <div>
+    <a routerLink="" (click)="onClick()">Logout</a>
     </div>
 
     <!--2nd child: flex-->
@@ -16,10 +16,10 @@
     <!--4th child: flex-->
     <div>
         <nav class="website-nav">
-            <a routerLink="/home" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Home</a> &nbsp; | &nbsp;
-            <a routerLink="/accounts-page"  routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Account's</a> &nbsp; | &nbsp;
-            <a routerLink="/account-summary" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Summary</a> &nbsp; | &nbsp;
-            <a routerLink="/settings" routerLinkActive = "active-link" [routerLinkActiveOptions] = "{exact: true}">Settings</a>
+            <a routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}">Home</a> &nbsp; | &nbsp;
+            <a [routerLink]="['/accounts-page/' + user]" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}">Account's</a> &nbsp; | &nbsp;
+            <a routerLink="/account-summary" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}">Summary</a> &nbsp; | &nbsp;
+            <a routerLink="/settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact : true}">Settings</a>
         </nav>
     </div>
 </div>

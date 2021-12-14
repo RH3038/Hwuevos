@@ -9,7 +9,7 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class AddUserService {
     private user!: IUser | null;
-    private _url = 'http://localhost:5000/add-user';
+    private _url!: string;
     
     constructor(private _http: HttpClient) {
         this.user = null;
@@ -34,6 +34,8 @@ export class AddUserService {
     }
 
     public addUser(data: any): Observable<any> {
+        
+        this._url = 'http://localhost:5000/user';
 
         return this._http.post<any>(this._url, data);
 

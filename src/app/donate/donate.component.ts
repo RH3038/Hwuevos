@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService} from 'src/index'
 
 @Component({
   selector: 'app-donate',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./donate.component.css']
 })
 export class DonateComponent implements OnInit {
-
+  loggedIn!: boolean;
   messageHead: string = "Help us stay active!";
 
   message: string = 
@@ -17,9 +18,12 @@ export class DonateComponent implements OnInit {
   To help us succeed please donate. Any 
   amount helps our cause.`;
   
-  constructor() { }
+  constructor(private _store: StorageService) { }
 
   ngOnInit(): void {
+
+    this.loggedIn = this._store.sessionGet("LoggedIn");
+
   }
 
 }
